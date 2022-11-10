@@ -29,6 +29,3 @@ EOF
 
 # lauch the shell to complete setup
 zsh
-
-# re-source final config one more time
-source ~/.zshrc
