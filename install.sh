@@ -11,6 +11,7 @@ rm -f .zsh* .zcompdump* .p10k.zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # add zsh-autosuggestions, zsh-completions and zsh-syntax-highlighting
+git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
 git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-completions
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -23,7 +24,7 @@ cat > ~/.zshrc <<EOF
 export ZSH="\$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode reminder
-plugins=(git python pip virtualenv zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
+plugins=(extract rsync git python pip virtualenv zsh-autocomplete zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 source \$ZSH/oh-my-zsh.sh
 EOF
 
