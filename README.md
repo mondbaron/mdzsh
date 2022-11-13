@@ -3,7 +3,7 @@
 A single-shot installation script to populate a powerful ZSH configuration on Debian based systems.
 
 The script configures/installs:
-- ZSH (`zsh`) and prerequisites (`curl`, `git`, `fonts-powerline`) via `apt`
+- ZSH (`zsh`) and prerequisites (`curl`, `git`) via `apt`
 - [Oh My Zsh](https://ohmyz.sh) managing framework via `curl`
 - Plugins (default):
     - extract
