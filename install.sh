@@ -7,7 +7,7 @@ fi
 
 # purge old installations
 rm -rf ${ZSH_CUSTOM:-$HOME/.oh-my-zsh}
-rm -f .zsh* .zcompdump* .p10k.zsh
+rm -f $HOME/.zsh* $HOME/.zcompdump* $HOME/.p10k.zsh
 
 # install oh-my-zsh (unattended)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
