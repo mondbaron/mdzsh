@@ -1,7 +1,9 @@
 #!/bin/sh
 
-# install prerequisites via apt
-sudo apt-get update && sudo apt-get install -yq curl git zsh fonts-powerline
+# install prerequisites via apt if required
+if ! dpkg -s curl git zsh > /dev/null; then
+    sudo apt-get update && sudo apt-get install -yq curl git zsh
+fi
 
 # purge old installations
 rm -rf ${ZSH_CUSTOM:-$HOME/.oh-my-zsh}
@@ -32,11 +34,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':omz:update' mode reminder
 
 # Default Plugins
-plugins=(extract rsync git python pip virtualenv zsh-autocomplete zsh-completions zsh-syntax-highlighting)
+plugins=(extract rsync git python pip virtualenv)
+
+# Additional Plugins
+plugins=(zsh-completions $plugins)
+plugins=(zsh-autocomplete $plugins)
+plugins=(zsh-syntax-highlighting $plugins)
+ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+plugins=(zsh-autosuggestions $plugins)
 
 # Optional Plugins (uncomment to activate)
-#plugins(autoswitch_virtualenv \$plugins)
-#plugins(zsh-autosuggestions \$plugins)
+#plugins=(autoswitch_virtualenv $plugins)
 
 # Proceed with oh-my-zsh
 source \$ZSH/oh-my-zsh.sh
