@@ -37,14 +37,14 @@ zstyle ':omz:update' mode reminder
 plugins=(extract rsync git python pip virtualenv)
 
 # Additional Plugins
-plugins=(zsh-completions $plugins)
-plugins=(zsh-autocomplete $plugins)
-plugins=(zsh-syntax-highlighting $plugins)
+plugins=(zsh-autocomplete \$plugins)
+plugins=(zsh-completions \$plugins)
 ZSH_AUTOSUGGEST_STRATEGY=(completion history)
-plugins=(zsh-autosuggestions $plugins)
+plugins=(zsh-autosuggestions \$plugins)
+plugins=(zsh-syntax-highlighting \$plugins)
 
 # Optional Plugins (uncomment to activate)
-#plugins=(autoswitch_virtualenv $plugins)
+#plugins=(autoswitch_virtualenv \$plugins)
 
 # Proceed with oh-my-zsh
 source \$ZSH/oh-my-zsh.sh
