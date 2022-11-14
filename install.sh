@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # install prerequisites via apt if required
-if ! dpkg -s curl git zsh > /dev/null; then
-    sudo apt-get update && sudo apt-get install -yq curl git zsh
+if ! dpkg -s curl git zsh fonts-powerline > /dev/null; then
+    sudo apt-get update && sudo apt-get install -yq curl git zsh fonts-powerline
 fi
 
 # purge old installations
